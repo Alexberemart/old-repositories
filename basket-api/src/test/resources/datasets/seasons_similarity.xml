@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <seasons id="NBA2019" web_key="webKey91" basket_origin_id="NBA"/>
+    <seasons id="FIBA2019" web_key="webKey92" basket_origin_id="FIBA"/>
+</dataset>

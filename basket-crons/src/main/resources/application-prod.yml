@@ -1,0 +1,18 @@
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+
+basket-scraping:
+  restart-jobs:
+    url: "http://127.0.0.1:8081/basket-job/restartJobs"
+  url: "http://127.0.0.1:8081/basket-job/processNextBasketJob"
+
+basket-api:
+  url: "http://127.0.0.1:8084/basket-season-job/processNext"
+  sendDailyBasketReferenceNotification:
+    url: "http://127.0.0.1:8084/notification/SendRecapNotificationOfLastDay"
+  createDraftConsolidatedBasketBallPlayers:
+    url: "http://127.0.0.1:8084/consolidated/players/0.8"

@@ -1,0 +1,27 @@
+server:
+  port: 8181
+
+app:
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:32768/basket-scraping?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root001
+    validationQuery: select 1
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+files:
+  path: /Users/aberenguer/temp
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVER_URL:http://127.0.0.1:8761/eureka/}

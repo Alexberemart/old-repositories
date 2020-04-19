@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<p>Stats from <span th:text="${date}">date</span></p>
+<p>Match scores from this night</p>
+<table>
+    <th>Local team</th>
+    <th>Result</th>
+    <th>Away team</th>
+    <tr th:each="matchScore : ${matchScoreList}">
+        <td><span th:text="${matchScore.localTeam}"> local team </span></td>
+        <td><span th:text="${matchScore.localPoints}"> Local points </span> - <span th:text="${matchScore.awayPoints}"> Away points </span></td>
+        <td><span th:text="${matchScore.awayTeam}"> away team </span></td>
+    </tr>
+</table>
+<p>Best scorer from this night</p>
+<table>
+    <th>Player</th>
+    <th>Points</th>
+    <tr th:each="bestScorer : ${bestScorerList}">
+        <td><span th:text="${bestScorer.player}"> Player </span></td>
+        <td><span th:text="${bestScorer.points}"> Points </span></td>
+    </tr>
+</table>
+</body>
+</html>

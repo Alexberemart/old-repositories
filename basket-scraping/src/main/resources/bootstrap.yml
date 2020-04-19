@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: basket-scraping
+  cloud:
+    config:
+      enabled: false
+      discovery:
+        enabled: false
+        service-id: config-server
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
+  hystrix:
+    enabled: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 40000

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <top_20_entries_detail id="top_20_entries_detail1" basket_player_entry_id="1" rating="10"/>
+    <top_20_entries_detail id="top_20_entries_detail2" basket_player_entry_id="2" rating="10"/>
+    <top_20_entries_detail id="top_20_entries_detail3" basket_player_entry_id="3" rating="10"/>
+</dataset>

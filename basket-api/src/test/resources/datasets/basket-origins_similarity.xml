@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <basket_origins id="NBA" name="basket reference"/>
+    <basket_origins id="FIBA" name="fiba"/>
+</dataset>

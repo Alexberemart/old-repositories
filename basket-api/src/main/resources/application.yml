@@ -1,0 +1,29 @@
+server:
+  port: 8184
+
+app:
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://127.0.0.1:32768/basket_api?autoReconnect=true&useSSL=false
+    username: root
+    password: root001
+    validationQuery: select 1
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+

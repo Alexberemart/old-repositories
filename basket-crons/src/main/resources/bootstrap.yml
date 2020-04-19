@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: basket-crons
+  cloud:
+    config:
+      enabled: false
+      discovery:
+        enabled: false

@@ -1,0 +1,8 @@
+server:
+  port: 8082
+
+basket-scraping:
+  url: "http://127.0.0.1:8181/basketreference/downloadnext"
+
+basket-api:
+  url: "http://127.0.0.1:8084/basket-season-job/processNext"

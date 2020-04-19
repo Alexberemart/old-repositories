@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <basket_team_entries id="1" basket_team_id="team1id" basket_match_id="91" type="0"/>
+    <basket_team_entries id="2" basket_team_id="team2id" basket_match_id="91" type="1"/>
+    <basket_team_entries id="6" basket_team_id="team1id" basket_match_id="92" type="0"/>
+    <basket_team_entries id="7" basket_team_id="team2id" basket_match_id="92" type="1"/>
+    <basket_team_entries id="8" basket_team_id="team1id" basket_match_id="gameKey93" type="0"/>
+</dataset>

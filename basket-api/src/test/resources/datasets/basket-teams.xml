@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <basket_teams id="team1id" name="team1name" referenceId="team1referenceid"/>
+    <basket_teams id="team2id" name="team2name" referenceId="team2referenceid"/>
+    <basket_teams id="team3id" name="team3name" referenceId="team3referenceid"/>
+    <basket_teams id="team4id" name="team4name" referenceId="team4referenceid"/>
+    <basket_teams id="team5id" name="team5name" referenceId="team5referenceid"/>
+</dataset>

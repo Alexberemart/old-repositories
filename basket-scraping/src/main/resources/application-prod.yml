@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+app:
+  datasource:
+    url: jdbc:mysql://192.168.100.35/basket-scraping?autoReconnect=true
+    username: pi
+    password: raspberry
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      dialect: org.hibernate.dialect.MariaDB53Dialect
+
+files:
+  path: /mnt/ext_HDD
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVER_URL:http://127.0.0.1:8761/eureka/}
+  instance:
+      preferIpAddress: true

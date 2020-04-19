@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProfile name="dev,test,default">
+
+        <!-- Keep Spring Boot default conf -->
+        <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+        <!-- Keep Spring Boot console appender as is -->
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+        <!-- Output debug level just for package com.grupoasv.* -->
+        <logger name="com.grupoasv" level="debug" />
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+
+    </springProfile>
+
+    <springProfile name="qa,prod">
+
+        <!-- Keep Spring Boot default conf -->
+        <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+        <!-- Refer to a Spring known property to make it available from Logback (http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#_environment_properties)  -->
+        <springProperty name="spring.application.name" source="spring.application.name"/>
+
+        <!-- Sets a default value for Spring boot logging.path property if not exists -->
+        <property name="logging.path" value="${logging.path:-./}" />
+
+        <!-- Override Spring Boot file appender to make time based log file rotation -->
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <encoder>
+                <!-- Reuse Spring Boot default pattern (https://github.com/spring-projects/spring-boot/blob/master/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml) -->
+                <pattern>${FILE_LOG_PATTERN}</pattern>
+            </encoder>
+            <!-- Current log file doesn't have date suffix (see http://logback.qos.ch/manual/appenders.html#tbrpFileNamePattern) -->
+            <file>${logging.path}/${spring.application.name}.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <!-- Append date suffix when rotate log files -->
+                <fileNamePattern>${logging.path}/${spring.application.name}_%d{yyyy-MM-dd}.log</fileNamePattern>
+                <!-- Purge old log files (happened on log rotate event) -->
+                <maxHistory>30</maxHistory>
+                <!-- Perform purge at app start (for apps with short life cycle which don't trigger log rotation) -->
+                <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            </rollingPolicy>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="FILE"/>
+        </root>
+
+     </springProfile>
+
+ </configuration>

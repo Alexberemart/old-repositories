@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <basket_matches id="91" season_id="NBA2019" date="2017-01-01" gameKey="gameKey91"/>
+    <basket_matches id="92" season_id="NBA2019" date="2018-01-01" gameKey="gameKey92"/>
+    <basket_matches id="gameKey93" season_id="FIBA2019" date="2018-01-03" gameKey="gameKey93"/>
+</dataset>

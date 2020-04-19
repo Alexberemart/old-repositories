@@ -1,0 +1,33 @@
+server:
+  port: 8084
+
+app:
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://192.168.100.35/basket-api?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: pi
+    password: raspberry
+    validationQuery: select 1
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      dialect: org.hibernate.dialect.MariaDB53Dialect
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_SERVER_URL:http://127.0.0.1:8761/eureka/}
+  instance:
+    preferIpAddress: true
